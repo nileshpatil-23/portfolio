@@ -433,13 +433,32 @@
 
                                     <!--Submit Button-->
                                     <div class="col-md-12 text-center">
-                                        <button id="cf-submit" class="btn-main">Send Message</button>
+                                        <button id="cf-submit" class="btn-main" onclick="abc()">Send Message</button>
                                     </div>
                                 </div>
                             </form>
                             <!--Form End-->
                         </div>
                     </div>
+                    
+                      <script>
+                        function abc(){
+                            var name= document.getElementById('name').value
+                            var email= document.getElementById('email').value
+                            var msg= document.getElementById('msg').value
+                        
+                        Email.send({
+                            SecureToken : "8298685f-4d96-43f6-a02e-18fa0cbf7ea3",
+                            To : 'borsemukesh026@gmail.com',
+                            From : "nilpatil9788@gmail.com",
+                            Subject : "This is the subject",
+                            Body : 'Name:'+name+ '<br>Email:'+email+'<br>Message:'+msg 
+                            <!-- Body : name + email + msg -->
+
+                        }).then(
+                          message => alert(message)
+                        );}
+                    </script>
 
                     <!--Contact Info Row Start-->
                     <div class="row contact-info mb-70">
